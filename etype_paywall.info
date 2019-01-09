@@ -4,4 +4,3 @@ description = Paywall module for eType Services.
 package = eType Services Custom Modules
 core = 7.x
 project = "etype_paywall"
-scripts[] = js/etype_paywall.js

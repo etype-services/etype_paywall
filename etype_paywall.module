@@ -1,0 +1,15 @@
+<?php
+/**
+ Paywall module to control non-subscriber access
+*/
+
+/**
+ * @param $variables
+ */
+function etype_paywall_preprocess_node(&$variables) {
+
+    if (node_is_page($variables['node'])) {
+        echo 'yes';
+    }
+
+}
