@@ -3,13 +3,42 @@
  Paywall module to control non-subscriber access
 */
 
+
 /**
- * @param $variables
+ * add admin url
+ * @return array
+ */
+function etype_paywall_menu() {
+    $items['admin/config/etype/etype_paywall/settings'] = array(
+        'title' => 'Paywall Settings',
+        'description' => 'eType paywall options.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('etype_paywall_admin'),
+        'access arguments' => array('administer paywall'),
+        'file' => 'includes/etype_paywall.admin.inc',
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function etype_paywall_permission() {
+    return [
+        'administer paywall' => [
+            'title' => t('Administer Paywall'),
+        ],
+    ];
+}
+
+/**
+ * @param $vars
  */
 function etype_paywall_preprocess_html(&$vars) {
 
     //dpm($vars['classes_array']);
-    // Check for node
+    // Check for node using body class
     if (in_array('node-type-article', $vars['classes_array'])) {
         drupal_add_js(drupal_get_path('module', 'etype_paywall') . '/js/etype_paywall.js', [
             'group' => JS_THEME,
