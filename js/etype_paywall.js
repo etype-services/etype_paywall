@@ -1,6 +1,5 @@
-/* add custom js */
 (function ($) {
-    'use strict';
+    "use strict";
     Drupal.behaviors.etype_paywall = {
         attach: function (context, settings) {
 
@@ -27,7 +26,9 @@
                 document.cookie = name+"=; Max-Age=-99999999;";
             };
 
-            setCookie("ppkcookie","testcookie",7);
+            var cookie = getCookie("ppkcookie");
+            console.log(cookie);
+            setCookie("ppkcookie","1",7);
 
         }
     };
