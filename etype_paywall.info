@@ -4,5 +4,4 @@ description = Paywall module for eType Services.
 
 package = eType Services Custom Modules
 core = 7.x
-project = "etype"
-dependencies[] = entity
+project = "etype_paywall"
