@@ -27,9 +27,8 @@
             };
 
             var cookie = getCookie("ppkcookie");
-            console.log(cookie);
-            setCookie("ppkcookie","1",7);
-
+            var value = cookie++;
+            setCookie("ppkcookie",value,60);
         }
     };
 })(jQuery);
