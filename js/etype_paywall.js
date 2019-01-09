@@ -28,6 +28,7 @@
                 document.cookie = name+"=; Max-Age=-99999999;";
             };
 
+            console.log(Drupal.settings.etype_paywall.limit);
             let cookie = getCookie("ppkcookie");
             let value = parseInt(cookie);
             value++;
