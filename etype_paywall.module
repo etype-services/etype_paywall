@@ -65,7 +65,7 @@ function etype_paywall_block_info() {
  * @param string $delta
  * @return array
  */
-function etype_block_view($delta = '') {
+function etype_paywall_block_view($delta = '') {
     $block = [];
     switch ($delta) {
         case 'etype-paywall':
