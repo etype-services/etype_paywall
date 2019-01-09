@@ -6,7 +6,7 @@
 /**
  * @param $variables
  */
-function etype_paywall_preprocess_node(&$variables) {
+function etype_paywall_preprocess_html(&$variables) {
 
     if (node_is_page($variables['node'])) {
         echo 'yes';
