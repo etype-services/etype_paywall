@@ -8,6 +8,13 @@
  */
 function etype_paywall_preprocess_html(&$vars) {
 
-    dpm($vars['classes_array']);
+    //dpm($vars['classes_array']);
+    // Check for node
+    if (in_array('node-type-article', $vars['classes_array'])) {
+        drupal_add_js(drupal_get_path('module', 'etype_paywall') . '/js/etype_paywall.js', [
+            'group' => JS_THEME,
+            'scope' => 'footer',
+        ]);
+    }
 
 }
