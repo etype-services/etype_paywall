@@ -8,8 +8,6 @@
  */
 function etype_paywall_preprocess_html(&$variables) {
 
-    if (node_is_page($variables['node'])) {
-        echo 'yes';
-    }
+    krumo::dump($variables);
 
 }
