@@ -6,8 +6,8 @@
 /**
  * @param $variables
  */
-function etype_paywall_preprocess_html(&$variables) {
+function etype_paywall_preprocess_html(&$vars) {
 
-    krumo::dump($variables);
+    dpm($vars['classes_array']);
 
 }
