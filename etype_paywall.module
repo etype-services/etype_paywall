@@ -47,5 +47,31 @@ function etype_paywall_preprocess_html(&$vars) {
             'scope' => 'footer',
         ]);
     }
+}
 
+/**
+ * Implements hook_block_info().
+ */
+function etype_paywall_block_info() {
+    $blocks = [];
+    $blocks['etype-paywall'] = [
+        'info' => t('eType Paywall'),
+    ];
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view()
+ * @param string $delta
+ * @return array
+ */
+function etype_block_view($delta = '') {
+    $block = [];
+    switch ($delta) {
+        case 'etype-paywall':
+            $block['subject'] = '';
+            $block['content'] = '';
+            break;
+    }
+    return $block;
 }

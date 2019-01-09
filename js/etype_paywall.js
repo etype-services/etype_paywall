@@ -28,10 +28,13 @@
                 document.cookie = name+"=; Max-Age=-99999999;";
             };
 
-            console.log(Drupal.settings.etype_paywall.limit);
+            //console.log(Drupal.settings.etype_paywall.limit);
             let cookie = getCookie("ppkcookie");
             let value = parseInt(cookie);
             value++;
+            if (value > Drupal.settings.etype_paywall.limit) {
+                
+            }
             setCookie("ppkcookie",value,60);
         }
     };
