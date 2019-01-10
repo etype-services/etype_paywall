@@ -71,7 +71,7 @@ function etype_paywall_block_view($delta = '') {
     $block = [];
     switch ($delta) {
         case 'etype-paywall':
-            $content = variable_get('etype_paywall_block_content');
+            $content = variable_get('etype_paywall_block_content')['value'];
             $block['subject'] = '';
             $block['content'] = $content;
             break;
