@@ -4,9 +4,10 @@
         attach: function (context, settings) {
 
             let paywall_replace = function(value) {
-                let html = $("block-etype-paywall-etype-paywall-info").html();
+                let block = $("block-etype-paywall-etype-paywall-info");
+                let html = block.html();
                 let replaced = html.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
-                $("block-etype-paywall-etype-paywall-info").html(replaced);
+                block.html(replaced);
             };
 
             let setCookie = function(name,value,days) {
