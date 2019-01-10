@@ -44,9 +44,9 @@
                 let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
                     value = 1;
-                    replace();
+                    replace(value);
                 } else {
-                    replace();
+                    replace(value);
                     if (value >= Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
