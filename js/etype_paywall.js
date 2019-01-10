@@ -34,6 +34,7 @@
                 //console.log(Drupal.settings.etype_paywall.limit);
                 let cookie = getCookie("ppkcookie");
                 let value = parseInt(cookie);
+                console.log(value);
                 if (value > Drupal.settings.etype_paywall.limit) {
                     $("#block-etype-paywall-etype-paywall").css("display", "block");
                     $('html, body').css({
@@ -42,7 +43,7 @@
                     });
                     $("#block-system-main").css("display", "none");
                 } else {
-                    if (value === 0) {
+                    if (value < 1) {
                         value = 1;
                     } else {
                         value++;
