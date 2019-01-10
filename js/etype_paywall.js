@@ -34,11 +34,17 @@
                 document.cookie = name+"=; Max-Age=-99999999;";
             };
 
+            let cookie = getCookie("ppkcookie");
+            let value = parseInt(cookie);
+
             if (Drupal.settings.etype_paywall.erase === 1) {
                 eraseCookie("ppkcookie");
+            } else if (Drupal.settings.etype_paywall.replace === 1) {
+                if (Number.isNaN(value)) {
+                    value = 1;
+                }
+                paywall_replace(value);
             } else {
-                let cookie = getCookie("ppkcookie");
-                let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
                     value = 1;
                     paywall_replace(value);
