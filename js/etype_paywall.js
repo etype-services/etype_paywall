@@ -44,7 +44,6 @@
                     value = 1;
                     paywall_replace(value);
                 } else {
-                    paywall_replace(value);
                     if (value > Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
@@ -55,6 +54,7 @@
                     } else {
                         value++;
                     }
+                    paywall_replace(value);
                 }
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
