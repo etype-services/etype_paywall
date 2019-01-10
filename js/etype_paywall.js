@@ -33,6 +33,10 @@
             let value = parseInt(cookie);
             if (value > Drupal.settings.etype_paywall.limit) {
                 $("#block-etype-paywall-etype-paywall").css("display", "block");
+                $('html, body').css({
+                    overflow: 'hidden',
+                    height: '100%'
+                });
             } else {
                 value++;
             }
