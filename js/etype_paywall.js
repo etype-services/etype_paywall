@@ -42,7 +42,11 @@
                     });
                     $("#block-system-main").css("display", "none");
                 } else {
-                    value++;
+                    if (value === 0) {
+                        value = 1;
+                    } else {
+                        value++;
+                    }
                 }
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
