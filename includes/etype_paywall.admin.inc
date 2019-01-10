@@ -37,5 +37,13 @@ function etype_paywall_admin() {
         '#format' => 'full_html'
     ];
 
+    $form['etype_paywall_info_block_content'] = [
+        '#type' => 'text_format',
+        '#title' => t('Paywall Info Block Content'),
+        '#size' => 55,
+        '#default_value' => variable_get('etype_paywall_info_block_content', '')['value'],
+        '#format' => 'full_html'
+    ];
+
     return system_settings_form($form);
 }

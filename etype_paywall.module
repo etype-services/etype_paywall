@@ -103,7 +103,7 @@ function etype_paywall_block_view($delta = '') {
             break;
 
         case 'etype-paywall-info':
-            $content = check_markup(variable_get('etype_paywall_block_content')['value'], 'full_html');
+            $content = check_markup(variable_get('etype_paywall_info_block_content')['value'], 'full_html');
             $block['subject'] = '';
             $block['content'] = $content;
             break;
