@@ -44,10 +44,10 @@ function etype_paywall_preprocess_html(&$vars) {
             'scope' => 'footer',
         ]);
     } else {
-        //dpm($vars['classes_array']);
+        $limit = variable_get('etype_paywall_limit',4);
+
         // Check for node using body class
         if (in_array('node-type-article', $vars['classes_array'])) {
-            $limit = variable_get('etype_paywall_limit',4);
             drupal_add_js(array('etype_paywall' => array('limit' => $limit)), array('type' => 'setting'));
             $duration = variable_get('etype_paywall_duration',4);
             drupal_add_js(array('etype_paywall' => array('duration' => $duration)), array('type' => 'setting'));
@@ -59,6 +59,7 @@ function etype_paywall_preprocess_html(&$vars) {
             drupal_add_css(drupal_get_path('module', 'etype_paywall') . '/css/etype_paywall.css');
         } else {
             drupal_add_js(array('etype_paywall' => array('replace' => 1)), array('type' => 'setting'));
+            drupal_add_js(array('etype_paywall' => array('limit' => $limit)), array('type' => 'setting'));
             drupal_add_js(drupal_get_path('module', 'etype_paywall') . '/js/etype_paywall.js', [
                 'group' => JS_THEME,
                 'scope' => 'footer',
