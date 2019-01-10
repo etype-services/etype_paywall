@@ -6,7 +6,7 @@
             let paywall_replace = function(value) {
                 $("block-etype-paywall-etype-paywall-info").text(function(index, text) {
                     let replaced = text.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
-                    console.log(replaced);
+                    console.log($("block-etype-paywall-etype-paywall-info").text());
                     return replaced;
                 });
             }
