@@ -35,7 +35,7 @@
             if (value > Drupal.settings.etype_paywall.limit) {
                 
             }
-            setCookie("ppkcookie",value,60);
+            setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
         }
     };
 })(jQuery);
