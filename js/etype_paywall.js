@@ -59,8 +59,9 @@
                         $("#block-system-main").css("display", "none");
                         $("#block-etype-paywall-etype-paywall-info").css("display", "none");
                         value = Drupal.settings.etype_paywall.limit;
+                    } else {
+                        paywall_replace(value);
                     }
-                    paywall_replace(value);
                 }
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
