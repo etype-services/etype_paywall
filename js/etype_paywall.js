@@ -45,7 +45,7 @@
                     paywall_replace(value);
                 } else {
                     paywall_replace(value);
-                    if (value >= Drupal.settings.etype_paywall.limit) {
+                    if (value > Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
                             overflow: 'hidden',
