@@ -4,13 +4,10 @@
         attach: function (context, settings) {
 
             let paywall_replace = function(value) {
-                console.log(value);
-                $("block-etype-paywall-etype-paywall-info").html(function(index, html) {
-                    let replaced = html.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
-                    console.log($("block-etype-paywall-etype-paywall-info").html());
-                    return replaced;
-                });
-            }
+                let html = $("block-etype-paywall-etype-paywall-info").html();
+                let replaced = html.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
+                $("block-etype-paywall-etype-paywall-info").html(replaced);
+            };
 
             let setCookie = function(name,value,days) {
                 let expires = "";
