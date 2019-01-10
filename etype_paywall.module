@@ -71,18 +71,18 @@ function etype_paywall_block_info() {
     ];
 
     $query = db_update('block_role')
-        ->fields(array(
+        ->fields([
             'module' => 'etype_paywall',
             'delta' => 'etype-paywall',
             'rid' => 1, // Anonymous User
-        ))
+        ])
         ->execute();
     $query = db_update('block_role')
-        ->fields(array(
+        ->fields([
             'module' => 'etype_paywall',
             'delta' => 'etype-paywall-info',
             'rid' => 1, // Anonymous User
-        ))
+        ])
         ->execute();
 
     return $blocks;
