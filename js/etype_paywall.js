@@ -3,9 +3,10 @@
     Drupal.behaviors.etype_paywall = {
         attach: function (context, settings) {
 
-            let replace = function() {
+            let replace = function(value) {
                 $("block-etype-paywall-etype-paywall-info").text(function(index, text) {
-                    let replaced = text.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", Drupal.settings.etype_paywall.limit);
+                    let replaced = text.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
+                    console.log(replaced);
                     return replaced;
                 });
             }
