@@ -37,6 +37,7 @@
                     overflow: 'hidden',
                     height: '100%'
                 });
+                $("#block-system-main").css("display", "none");
             } else {
                 value++;
             }
