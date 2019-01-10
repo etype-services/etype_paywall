@@ -37,7 +37,6 @@
             if (Drupal.settings.etype_paywall.erase === 1) {
                 eraseCookie("ppkcookie");
             } else {
-                //console.log(Drupal.settings.etype_paywall.limit);
                 let cookie = getCookie("ppkcookie");
                 let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
