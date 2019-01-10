@@ -75,12 +75,14 @@ function etype_paywall_block_info() {
  */
 function etype_paywall_block_view($delta = '') {
     $block = [];
-    switch ($delta) {
-        case 'etype-paywall':
-            $content = check_markup(variable_get('etype_paywall_block_content')['value'], 'full_html');
-            $block['subject'] = '';
-            $block['content'] = $content;
-            break;
+    if (!user_is_logged_in()) {
+        switch ($delta) {
+            case 'etype-paywall':
+                $content = check_markup(variable_get('etype_paywall_block_content')['value'], 'full_html');
+                $block['subject'] = '';
+                $block['content'] = $content;
+                break;
+        }
     }
     return $block;
 }
