@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kCAAmC;EACjC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,OAAO",
+"sources": ["../etype_paywall.scss"],
+"names": [],
+"file": "etype_paywall.css"
+}
