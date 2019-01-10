@@ -43,6 +43,7 @@
                     value = 1;
                     paywall_replace(value);
                 } else {
+                    value++;
                     if (value > Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
@@ -50,8 +51,6 @@
                             height: '100%'
                         });
                         $("#block-system-main").css("display", "none");
-                    } else {
-                        value++;
                     }
                     paywall_replace(value);
                 }
