@@ -57,6 +57,7 @@
                             height: '100%'
                         });
                         $("#block-system-main").css("display", "none");
+                        $("#block-etype-paywall-etype-paywall-info").css("display", "none");
                         value = Drupal.settings.etype_paywall.limit;
                     }
                     paywall_replace(value);
