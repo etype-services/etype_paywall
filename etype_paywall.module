@@ -9,7 +9,7 @@
  * @return array
  */
 function etype_paywall_menu() {
-    $items['admin/config/etype/etype_paywall/settings'] = array(
+    $items['admin/config/etype/etype_paywall/settings'] = [
         'title' => 'Paywall Settings',
         'description' => 'eType paywall options.',
         'page callback' => 'drupal_get_form',
@@ -17,7 +17,7 @@ function etype_paywall_menu() {
         'access arguments' => array('administer paywall'),
         'file' => 'includes/etype_paywall.admin.inc',
         'type' => MENU_NORMAL_ITEM,
-    );
+    ];
     return $items;
 }
 
