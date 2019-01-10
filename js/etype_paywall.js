@@ -3,7 +3,7 @@
     Drupal.behaviors.etype_paywall = {
         attach: function (context, settings) {
 
-            let replace = function(value) {
+            let paywall_replace = function(value) {
                 $("block-etype-paywall-etype-paywall-info").text(function(index, text) {
                     let replaced = text.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
                     console.log(replaced);
@@ -44,9 +44,9 @@
                 let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
                     value = 1;
-                    replace(value);
+                    paywall_replace(value);
                 } else {
-                    replace(value);
+                    paywall_replace(value);
                     if (value >= Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
