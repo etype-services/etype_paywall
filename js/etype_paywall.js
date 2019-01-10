@@ -34,6 +34,9 @@
                 //console.log(Drupal.settings.etype_paywall.limit);
                 let cookie = getCookie("ppkcookie");
                 let value = parseInt(cookie);
+                if (Number.isNaN(value)) {
+                    let value = 1;
+                }
                 console.log(value);
                 if (value > Drupal.settings.etype_paywall.limit) {
                     $("#block-etype-paywall-etype-paywall").css("display", "block");
