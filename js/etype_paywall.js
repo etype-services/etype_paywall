@@ -28,20 +28,24 @@
                 document.cookie = name+"=; Max-Age=-99999999;";
             };
 
-            //console.log(Drupal.settings.etype_paywall.limit);
-            let cookie = getCookie("ppkcookie");
-            let value = parseInt(cookie);
-            if (value > Drupal.settings.etype_paywall.limit) {
-                $("#block-etype-paywall-etype-paywall").css("display", "block");
-                $('html, body').css({
-                    overflow: 'hidden',
-                    height: '100%'
-                });
-                $("#block-system-main").css("display", "none");
+            if (Drupal.settings.etype_paywall.erase === 1) {
+                eraseCookie("ppkcookie");
             } else {
-                value++;
+                //console.log(Drupal.settings.etype_paywall.limit);
+                let cookie = getCookie("ppkcookie");
+                let value = parseInt(cookie);
+                if (value > Drupal.settings.etype_paywall.limit) {
+                    $("#block-etype-paywall-etype-paywall").css("display", "block");
+                    $('html, body').css({
+                        overflow: 'hidden',
+                        height: '100%'
+                    });
+                    $("#block-system-main").css("display", "none");
+                } else {
+                    value++;
+                }
+                setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
-            setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
         }
     };
 })(jQuery);
