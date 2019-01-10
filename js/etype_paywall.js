@@ -3,6 +3,13 @@
     Drupal.behaviors.etype_paywall = {
         attach: function (context, settings) {
 
+            let replace = function() {
+                $("block-etype-paywall-etype-paywall-info").text(function(index, text) {
+                    let replaced = text.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", Drupal.settings.etype_paywall.limit);
+                    return replaced;
+                });
+            }
+
             let setCookie = function(name,value,days) {
                 let expires = "";
                 if (days) {
@@ -36,7 +43,9 @@
                 let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
                     value = 1;
+                    replace();
                 } else {
+                    replace();
                     if (value >= Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
@@ -48,7 +57,6 @@
                         value++;
                     }
                 }
-                console.log(value);
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
         }
