@@ -40,6 +40,7 @@ function etype_paywall_admin() {
     $form['etype_paywall_info_block_content'] = [
         '#type' => 'text_format',
         '#title' => t('Paywall Info Block Content'),
+        '#description' => t("#number and #limit will be replaced with correct values."),
         '#size' => 55,
         '#default_value' => variable_get('etype_paywall_info_block_content', '')['value'],
         '#format' => 'full_html'
