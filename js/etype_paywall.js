@@ -37,15 +37,16 @@
                 if (Number.isNaN(value)) {
                     value = 1;
                 } else {
-                    if (value > Drupal.settings.etype_paywall.limit) {
+                    if (value >= Drupal.settings.etype_paywall.limit) {
                         $("#block-etype-paywall-etype-paywall").css("display", "block");
                         $('html, body').css({
                             overflow: 'hidden',
                             height: '100%'
                         });
                         $("#block-system-main").css("display", "none");
+                    } else {
+                        value++;
                     }
-                    value++;
                 }
                 console.log(value);
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
