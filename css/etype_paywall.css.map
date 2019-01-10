@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,kCAAmC;EACjC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,OAAO",
+"mappings": "AAAA,kCAAmC;EACjC,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,OAAO",
 "sources": ["../etype_paywall.scss"],
 "names": [],
 "file": "etype_paywall.css"
