@@ -35,23 +35,19 @@
                 let cookie = getCookie("ppkcookie");
                 let value = parseInt(cookie);
                 if (Number.isNaN(value)) {
-                    let value = 1;
+                    value = 1;
+                } else {
+                    if (value > Drupal.settings.etype_paywall.limit) {
+                        $("#block-etype-paywall-etype-paywall").css("display", "block");
+                        $('html, body').css({
+                            overflow: 'hidden',
+                            height: '100%'
+                        });
+                        $("#block-system-main").css("display", "none");
+                    }
+                    value++;
                 }
                 console.log(value);
-                if (value > Drupal.settings.etype_paywall.limit) {
-                    $("#block-etype-paywall-etype-paywall").css("display", "block");
-                    $('html, body').css({
-                        overflow: 'hidden',
-                        height: '100%'
-                    });
-                    $("#block-system-main").css("display", "none");
-                } else {
-                    if (value < 1) {
-                        value = 1;
-                    } else {
-                        value++;
-                    }
-                }
                 setCookie("ppkcookie", value, Drupal.settings.etype_paywall.duration);
             }
         }
