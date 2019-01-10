@@ -58,7 +58,7 @@ function etype_paywall_preprocess_html(&$vars) {
             ]);
             drupal_add_css(drupal_get_path('module', 'etype_paywall') . '/css/etype_paywall.css');
         } else {
-            drupal_add_js(array('etype_paywall' => array('replace' => 1)), array('type' => 'setting'));
+            drupal_add_js(array('etype_paywall' => array('replace_only' => 1)), array('type' => 'setting'));
             drupal_add_js(array('etype_paywall' => array('limit' => $limit)), array('type' => 'setting'));
             drupal_add_js(drupal_get_path('module', 'etype_paywall') . '/js/etype_paywall.js', [
                 'group' => JS_THEME,

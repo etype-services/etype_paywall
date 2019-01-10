@@ -39,7 +39,7 @@
 
             if (Drupal.settings.etype_paywall.erase === 1) {
                 eraseCookie("ppkcookie");
-            } else if (Drupal.settings.etype_paywall.replace === 1) {
+            } else if (Drupal.settings.etype_paywall.replace_only === 1) {
                 if (Number.isNaN(value)) {
                     value = 1;
                 }
