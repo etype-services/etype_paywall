@@ -3,12 +3,6 @@
     Drupal.behaviors.etype_paywall = {
         attach: function (context, settings) {
 
-            let paywall_replace = function(value) {
-                $("#block-etype-paywall-etype-paywall-info").html(function(index, html) {
-                    return html.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
-                });
-            };
-
             let setCookie = function(name,value,days) {
                 let expires = "";
                 if (days) {
@@ -32,6 +26,12 @@
 
             let eraseCookie = function(name) {
                 document.cookie = name+"=; Max-Age=-99999999;";
+            };
+
+            let paywall_replace = function(value) {
+                $("#block-etype-paywall-etype-paywall-info").html(function(index, html) {
+                    return html.replace("#limit", Drupal.settings.etype_paywall.limit).replace("#number", value);
+                });
             };
 
             let cookie = getCookie("ppkcookie");
