@@ -66,7 +66,7 @@ function etype_paywall_block_info() {
         'info' => t('eType Paywall'),
     ];
 
-    $query = db_insert('block_role')
+    $query = db_update('block_role')
         ->fields(array(
             'module' => 'etype_paywall',
             'delta' => 'etype-paywall',
